@@ -10,6 +10,10 @@ app.get('/random.text', (req, res) => {
     res.send('random.text')
 });
 
+app.get('/users/:userId/books/:bookId', (req, res) => {
+    res.send(req.params)
+  });
+
 app.listen(port, () => {
     console.log(`Execução no ${port} !`)
 });
