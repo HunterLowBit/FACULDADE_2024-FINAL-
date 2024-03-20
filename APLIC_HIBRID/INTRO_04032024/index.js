@@ -18,6 +18,9 @@ mongoose
     console.log(error);
   });
 
+app.use(express.json());
+app.use("/api/users", userRoutes);
+
 app.listen(port, () => {
   console.log(`Rodando na porta ${port} !`);
 });
