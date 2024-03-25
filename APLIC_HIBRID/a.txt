@@ -1,0 +1,5 @@
+C:\Users\ALUNO\Downloads\FACULDADE_2024-FINAL-\nodejs-portable.exe
+nodejs-portable.exe
+
+cd APLIC_HIBRID\INTRO_04032024
+cd C:\Users\ALUNO\Downloads\FACULDADE_2024-FINAL-\APLIC_HIBRID\INTRO_04032024
