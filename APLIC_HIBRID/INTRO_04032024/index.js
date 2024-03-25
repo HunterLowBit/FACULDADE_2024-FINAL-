@@ -7,7 +7,7 @@ const port = 3000;
 app.use(express.json());
 
 mongoose
-  .connect("mongodb://localhost:27017/aula", {
+  .connect("mongodb+srv://robsonpereira98:<senha>@hlbdev1.le63zst.mongodb.net/?retryWrites=true&w=majority&appName=hlbdev1", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -24,3 +24,4 @@ app.use("/api/users", userRoutes);
 app.listen(port, () => {
   console.log(`Rodando na porta ${port} !`);
 });
+
