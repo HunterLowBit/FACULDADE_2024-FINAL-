@@ -1,18 +1,18 @@
 {
-  "name": "270324",
+  
+  "name": "new27-03-24",
   "version": "1.0.0",
-  "description": "Novo_projeto",
   "main": "index.js",
   "scripts": {
-    "test": "npm run nodemon"
+    "test": "teste",
+    "nodemon": "nodemon index.js"
   },
-  "author": "HLB",
+  "author": "hlb",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "express": "^4.19.2",
-    "mongoose": "^8.2.3"
-  },
-  "devDependencies": {
+    "mongoose": "^8.2.3",
     "nodemon": "^3.1.0"
   }
 }
