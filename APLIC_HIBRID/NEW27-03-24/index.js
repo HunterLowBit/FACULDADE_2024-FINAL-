@@ -10,6 +10,7 @@ app.get("/users/:userId/books/:bookId", (req, res) => {
     res.send(req.params);
     const { userId, bookId } = req.params;
     console.log(`userId: ${userId}, bookId: ${bookId}`);
+    console.log(' o usuario e o livro ${userId}, ${bookId} foram selecionados');
 });
 
 app.listen(port, () => {
