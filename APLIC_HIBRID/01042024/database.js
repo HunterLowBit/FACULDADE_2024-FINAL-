@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const mongo_key = require("./mongo_key/key");
-const conenctDB = async () => {
+const connectDB = async () => {
   try {
     await mongoose.connect(mongo_key, {
       useNewUrlParser: true,
@@ -13,4 +13,5 @@ const conenctDB = async () => {
   }
 };
 
-module.export = conectDB;
+module.export = connectDB;
+// Path: database.js

@@ -20,3 +20,4 @@ class UserRepository {
 }
 
 module.exports = new UserRepository();
+// Path: src/repositories/userRepository.js
