@@ -1,4 +1,5 @@
 const userRepository = require("../repositories/userRepository");
+
 exports.createUser = async (req, res) => {
   try {
     const user = await userRepository.create(req.body);
@@ -8,7 +9,6 @@ exports.createUser = async (req, res) => {
   }
 };
 
-// implementar outros metodos.
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await userRepository.findAll();
@@ -48,4 +48,5 @@ exports.getUserById = async (req, res) => {
   }
 };
 
-// Path: src/repositories/userRepository.js
+// Path: src/controllers/userController.js
+
