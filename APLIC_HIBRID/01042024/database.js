@@ -1,17 +1,16 @@
 const mongoose = require("mongoose");
 const mongo_key = require("./mongo_key/key");
-const connectDB = async () => {
+
+const connectDb = async () => {
   try {
     await mongoose.connect(mongo_key, {
       useNewUrlParser: true,
-      newUnifiedTopology: true,
+      useUnifiedTopology: true,
     });
     console.log("Conectado ao MongoDB");
   } catch (error) {
-    console.error("erro ao conectar ao MongoDB", error);
-    process.exit(1);
+    console.log(error);
   }
 };
-
-module.export = connectDB;
+module.exports = connectDb;
 // Path: database.js
