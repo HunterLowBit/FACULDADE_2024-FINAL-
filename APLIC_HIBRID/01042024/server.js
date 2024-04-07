@@ -12,5 +12,5 @@ app.use("/api", routes);
 
 app.get("/", (req, res) => res.send("TESTE_ROTA!"));
 app.listen(port, () =>
-  console.log(`utiilizando a porta ${port}!, http://localhost:${port}`)
+  console.log(`Utilizando a porta ${port}!, http://localhost:${port}`)
 );

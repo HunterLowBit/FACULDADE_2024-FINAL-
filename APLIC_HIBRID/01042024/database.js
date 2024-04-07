@@ -1,13 +1,11 @@
 const mongoose = require("mongoose");
+const mongo_key = require("./mongo_key/key");
 const conenctDB = async () => {
   try {
-    await mongoose.connect(
-      "sua string de conexão, por exemplo: mongodb://localhost:27017/teste",
-      {
-        useNewUrlParser: true,
-        newUnifiedTopology: true,
-      }
-    );
+    await mongoose.connect(mongo_key, {
+      useNewUrlParser: true,
+      newUnifiedTopology: true,
+    });
     console.log("Conectado ao MongoDB");
   } catch (error) {
     console.error("erro ao conectar ao MongoDB", error);

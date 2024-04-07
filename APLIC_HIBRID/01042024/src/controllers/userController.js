@@ -22,7 +22,27 @@ exports.updateUser = async (req, res) => {
   try {
     const { id } = req.params;
     const user = await userRepository.update(id, req.body);
-    res.json(user); // 200  - OK
+    res.json(user); //
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+exports.deleteUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await userRepository.delete(id);
+    res.json(user);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+exports.getUserById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await userRepository.findById(id);
+    res.json(user);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
