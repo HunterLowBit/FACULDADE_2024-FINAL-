@@ -15,10 +15,12 @@ router.post("/exemplo", (req, res) => {
   console.log(body);
 });
 
-router.get("/", userController.getAllUsers);
-router.post("/", userController.createUser);
-router.put("/:id", userController.updateUser);
-router.delete("/:id", userController.deleteUser);
-router.get("/:id", userController.getUserById);
+router.get("/", userController.getAllUsers); // http://localhost:3000/user
+router.post("/", userController.createUser); // http://localhost:3000/user
+router.put("/:id", userController.updateUser); // http://localhost:3000/user
+router.delete("/:id", userController.deleteUser); // http://localhost:3000/user
+router.get("/:id", userController.getUserById); // http://localhost:3000/user
+
 
 module.exports = router;
+// Path: src/routes/userRoutes.js
