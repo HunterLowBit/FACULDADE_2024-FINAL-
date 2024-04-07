@@ -5,19 +5,15 @@ class UserRepository {
     await user.save();
     return user;
   }
-
   async findAll() {
     return User.find();
   }
-
   async findById(id) {
     return User.findById(id);
   }
-
   async findById(id, userData) {
     return User.findByIdAndUpdate(id, userData, { new: true });
   }
-
   async delete(id) {
     return User.findByIdAndDelete(id);
   }

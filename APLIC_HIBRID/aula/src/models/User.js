@@ -1,7 +1,7 @@
-const moongoose = require('mongoose');
+const moongoose = require("mongoose");
 
 const userSchema = new moongoose.Schema({
-    /* aqui você passa a configuração do seu esquema.*/
-})
+  /* aqui você passa a configuração do seu esquema.*/
+});
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);
