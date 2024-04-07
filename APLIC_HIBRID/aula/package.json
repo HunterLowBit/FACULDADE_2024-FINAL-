@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "test": "tem alguma porra aqui",
+        "dev": "node server.js"
+    }
+}
