@@ -10,4 +10,4 @@ const create = async (req, res) => {
     res.status(201).json({ message: "Usuário criado com sucesso!" });
 };
 
-module.exports = { create };
+module.exports = create ;
