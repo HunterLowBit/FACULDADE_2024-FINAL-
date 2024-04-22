@@ -15,7 +15,6 @@ connectDb().then(() => {
 
 app.get("/", (req, res) => res.send("TESTE_ROTA!"));
 
-
 app.listen(port, () =>
   console.log(`Utilizando a porta ${port}!, http://localhost:${port}`)
 );
