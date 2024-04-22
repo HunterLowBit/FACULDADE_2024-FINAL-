@@ -1,4 +1,6 @@
 const User = require("../models/Users");
+const jwt = require("jsonwebtoken");
+const expressJwt = require("express-jwt");
 
 exports.getAllUsers = async (req, res) => {
   try {
