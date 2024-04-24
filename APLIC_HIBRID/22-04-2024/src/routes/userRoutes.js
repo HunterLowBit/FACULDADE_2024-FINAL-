@@ -2,13 +2,16 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
 
-router.post("/authenticate", (req, res) => {
-  const token = generateToken(req.body.user);
-  res.send({ token });
-});
-router.get("/protected", expressJwt({ secret: SECRET_KEY }), (req, res) => {
-  res.send("Esta é uma rota protegida");
-});
+// Rota para autenticação
+router.post("/authenticate", userController.authenticate);
+
+// Protege as rotas abaixo com o middleware verifyToken
+router.use(userController.verifyToken);
+
+// Rotas protegidas
+router.get("/protected", userController.protected);
+
+// Rotas CRUD de usuários
 router.get("/", userController.getAllUsers);
 router.post("/", userController.createUser);
 router.put("/:id", userController.updateUser);

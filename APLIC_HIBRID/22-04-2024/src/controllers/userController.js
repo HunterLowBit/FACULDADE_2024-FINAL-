@@ -1,64 +1,24 @@
-const User = require("../models/Users");
+const User = require("../models/User");
 const jwt = require("jsonwebtoken");
-const expressJwt = require("express-jwt");
+const SECRET_KEY = process.env.SECRET_KEY; // Pega a chave secreta da variável de ambiente
 
-exports.getAllUsers = async (req, res) => {
-  try {
-    const users = await User.find();
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-};
-
-exports.createUser = async (req, res) => {
-  const user = req.body;
+exports.authenticate = async (req, res) => {
+  const { email, password } = req.body;
 
   try {
-    const savedUser = await User.create(user);
-    res.status(200).json(savedUser);
+    // Verificar se o usuário existe e a senha está correta
+    const user = await User.findOne({ email, password });
+
+    if (!user) {
+      return res.status(401).json({ message: "Credenciais inválidas" });
+    }
+
+    // Gerar um token JWT válido
+    const token = jwt.sign({ id: user._id }, SECRET_KEY, { expiresIn: "1h" });
+
+    res.json({ token, user });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(500).json({ message: "Erro ao autenticar usuário" });
   }
 };
 
-exports.updateUser = async (req, res) => {
-  try {
-    const updateUser = await User.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    });
-    res.status(200).json(updateUser);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-};
-
-exports.deleteUser = async (req, res) => {
-  try {
-    await User.findByIdAndDelete(req.params.id);
-    res.status(200).json({ message: "usuario deletado com sucesso" });
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-};
-
-exports.verifyToken = (req, res, next) => {
-  const bearerHeader = req.headers["authorization"];
-
-  if (typeof bearerHeader !== "undefined") {
-    const bearer = bearerHeader.split(" ");
-    const bearerToken = bearer[1];
-    req.token = bearerToken;
-
-    jwt.verify(req.token, "your-secret-key", (err, authData) => {
-      if (err) {
-        res.sendStatus(403);
-      } else {
-        req.authData = authData;
-        next();
-      }
-    });
-  } else {
-    res.sendStatus(403);
-  }
-};
