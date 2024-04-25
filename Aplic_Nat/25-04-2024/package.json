@@ -1,0 +1,21 @@
+{
+  "name": "jwt",
+  "version": "1.0.0",
+  "description": "code for implementing jwt autentication",
+  "main": "server.js",
+  "scripts": {
+    "test": "dev",
+    "nn": "nodemon server.js"
+  },
+  "author": "HunterLowBit",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-jwt": "^8.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
