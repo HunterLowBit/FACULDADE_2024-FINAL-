@@ -7,10 +7,13 @@ const port = 3000;
 app.use(express.json());
 
 mongoose
-  .connect("mongodb+srv://robsonpereira98:<senha>@hlbdev1.le63zst.mongodb.net/?retryWrites=true&w=majority&appName=hlbdev1", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://robsonpereira98:<senha>@hlbdev1.le63zst.mongodb.net/?retryWrites=true&w=majority&appName=hlbdev1",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("Conectado ao MongoDB");
   })
@@ -24,4 +27,3 @@ app.use("/api/users", userRoutes);
 app.listen(port, () => {
   console.log(`Rodando na porta ${port} !`);
 });
-

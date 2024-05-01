@@ -4,11 +4,11 @@ const app = express();
 const port = 3000;
 
 connectDb().then(() => {
-    console.log("▐▓█▀▀▀▀▀▀▀▀▀█▓▌░▄▄▄▄▄░");
-    console.log("▐▓█░░▀░░▀▄░░█▓▌░█▄▄▄█░");
-    console.log("▐▓█░░▄░░▄▀░░█▓▌░█▄▄▄█░");
-    console.log("▐▓█▄▄▄▄▄▄▄▄▄█▓▌░█████░");
-    console.log("░░░░▄▄███▄▄░░░░░█████░");
+  console.log("▐▓█▀▀▀▀▀▀▀▀▀█▓▌░▄▄▄▄▄░");
+  console.log("▐▓█░░▀░░▀▄░░█▓▌░█▄▄▄█░");
+  console.log("▐▓█░░▄░░▄▀░░█▓▌░█▄▄▄█░");
+  console.log("▐▓█▄▄▄▄▄▄▄▄▄█▓▌░█████░");
+  console.log("░░░░▄▄███▄▄░░░░░█████░");
 });
 
 app.get("/", (req, res) => res.send("TESTE_ROTA!"));

@@ -1,6 +1,6 @@
 import express from "express";
 import { config } from "dotenv";
-config({ path: 'src/.env' });
+config({ path: "src/.env" });
 
 const app = express();
 

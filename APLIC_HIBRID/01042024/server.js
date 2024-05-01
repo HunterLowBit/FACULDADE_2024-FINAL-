@@ -1,5 +1,5 @@
 const express = require("express");
-const routes = require("./src/routes/userRoutes"); 
+const routes = require("./src/routes/userRoutes");
 const connectDb = require("./database");
 
 const app = express();
@@ -11,9 +11,7 @@ connectDb().then(() => {
   console.log("Conectado ao MongoDB");
 });
 
-
 app.use("/user", routes);
-
 
 app.get("/", (req, res) => res.send("TESTE_ROTA!"));
 app.listen(port, () =>
